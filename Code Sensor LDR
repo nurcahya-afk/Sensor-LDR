@@ -1,0 +1,22 @@
+int LDR = A0;
+int LED = 3;
+int dataSensor;
+
+void setup()
+{
+pinMode(LDR, INPUT);
+pinMode(LDR, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop()
+{
+dataSensor = analogRead(LDR);
+Serial.printIn(dataSensor);
+
+if(dataSensor < 100){
+digitalWrite (LED, HIGH);
+}
+else
+digitalWrite(LED, LOW);
+}
